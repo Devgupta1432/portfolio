@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dev's portfolio</title>
+    <link rel="stylesheet" href="sty.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <nav>
+        <div class="left"><span style="font-family: 'Gill Sans';"> Dev's Portfolio </span></div>
+        <div class="right">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/">Projects</a></li>
+                <li><a href="/">About Me</a></li>
+                <li><a href="/">Contact Me</a></li>
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <div class="slider round"></div>
+                         
+                    </label>
+                </div>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <section class="firstsection">
+            <div class="leftsection">
+                Hi, My name is <span class="dev">Dev</span>
+                <div>And i am a passinate</div>
+                <span id="element"></span>
+            </div>
+            <div class="rightsection">
+                <img src="pg1.png" alt="" >
+            </div>
+        </section>
+        <hr />
+        <section class="secondsection">
+            <div class="lefts">
+                <p><span style="font-size: 37px; font-family: gill sans-serif;">Hello and welcome to my portfolio website!</span></p>
+                
+                I am a passionate software developer specializing in creating innovative solutions with a strong foundation in Java, Python, and JavaScript. 
+                With experience in web and mobile app development, I excel in front-end technologies like HTML, CSS, and React.js, and back-end technologies such as Node.js and Express.js.
+                I thrive in agile environments, collaborating with teams to deliver high-quality software on time.
+                Constantly seeking new challenges, I bring a problem-solving mindset and a commitment to clean code to every project.
+                Explore my portfolio to see my skills in action and let's discuss how I can contribute to your next endeavor.
+            </div>
+            <div class="rights">
+                <img src="im.jpg" style="border: 5px solid #000000 ;" alt="">
+            </div>
+        </section>
+    </main>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed("#element", {
+            strings: ["Web Developer", "Ui / Ux Designer", "Web Designer"],
+            typeSpeed: 50,
+        });
+
+        const toggleSwitch = document.querySelector(
+            '.theme-switch input[type="checkbox"]'
+        );
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute("data-theme", "dark");
+            } else {
+                document.documentElement.setAttribute("data-theme", "light");
+            }
+        }
+
+        toggleSwitch.addEventListener("change", switchTheme, false);
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute("data-theme", "dark");
+                localStorage.setItem("theme", "dark"); //add this
+            } else {
+                document.documentElement.setAttribute("data-theme", "light");
+                localStorage.setItem("theme", "light"); //add this
+            }
+        }
+    </script>
+</body>
+
+</html>
